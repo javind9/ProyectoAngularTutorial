@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UsuariosService } from './usuarios.service';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  persona = {
-    nombre: 'Luis',
-    edad: 20
-  }
+  personas : any = [];
+
+    constructor(){
+        let usuario = new UsuariosService();
+        this.personas = usuario.getUsuarios();
+    }
 }

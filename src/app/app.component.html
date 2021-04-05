@@ -1,5 +1,7 @@
-
-<input type="text" [(ngModel)] = "persona.nombre">
-<p>{{ persona.nombre }}</p>
+<ul>
+    <li *ngFor="let persona of personas">
+        {{ persona.nombre }}
+    </li>
+</ul>
 
 
