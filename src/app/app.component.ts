@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-  <input type = "text" (keyup.enter) = "onKeyUp()"/>
+  <input type = "text" (keyup.enter) = "onKeyUp(nombre.value)"  #nombre/>
   `,
   styles: [`
   `]
@@ -11,8 +11,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
 
-  onKeyUp(){
-      console.log("Enter fue presionado");
+  onKeyUp(usuario){
+    //Obtenemos el valor ingresado en el textbox.
+      console.log(usuario);
   }
 
 }
