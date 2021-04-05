@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UsuariosService } from './usuarios.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +8,8 @@ import { UsuariosService } from './usuarios.service';
 })
 export class AppComponent {
 
-  personas : any = [];
-
-    constructor(private usuariosservice : UsuariosService){
-        this.personas = usuariosservice.getUsuarios();
-    }
+  miFormulario = new FormGroup({
+    username: new FormControl('', Validators.required),
+    userpassword: new FormControl('', Validators.required)
+  });
 }
