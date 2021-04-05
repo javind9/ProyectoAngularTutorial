@@ -3,15 +3,14 @@ import { UsuariosService } from './usuarios.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl:"./app.component.html",
-  styles: [``]
+  templateUrl:'./app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
 
   personas : any = [];
 
-    constructor(){
-        let usuario = new UsuariosService();
-        this.personas = usuario.getUsuarios();
+    constructor(private usuariosservice : UsuariosService){
+        this.personas = usuariosservice.getUsuarios();
     }
 }
